@@ -3,7 +3,7 @@ import nav from "./nav";
 import chat from "./chat";
 import { marked } from "marked";
 document.querySelector("#app").innerHTML = `
-  <main class=" min-h-dvh bg-[#212121] flex flex-col items-center justify-center">
+  <main class="p-5 min-h-dvh bg-[#212121] flex flex-col items-center justify-center">
     ${nav()}
   <section class="flex-1 w-full flex flex-col items-center justify-center">
     <div id="chat_content" class="w-full mb-5">
@@ -47,12 +47,12 @@ form1.addEventListener("submit", async (event) => {
     const result = await response.json();
     const chatdiv = document.createElement("div");
     chatdiv.innerHTML = `
-<div class="flex flex-col-reverse gap-9 md:grid md:grid-cols-2 max-w-4xl mx-auto w-full">
+<div class="flex flex-col gap-9 md:grid md:grid-cols-2 max-w-4xl mx-auto w-full">
  <h1 class="text-lg md:text-xl text-white  p-1 border-l-2 border-l-gray-500">${
    area1.value
  }</h1>
-   <div></div>
-   <div></div>
+   <div class="md:block hidden"></div>
+   <div class="md:block hidden"></div>
 
    <div class="bg-[#2F2F2F] p-3 rounded-2xl prose prose-invert">
        ${marked.parse(result.result)}
